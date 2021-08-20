@@ -10,14 +10,12 @@
 
 .dark {
   --bg: rgb(36, 35, 35);
-    --titlebg: rgb(163, 163, 163);
-    --calcbg: rgb(155, 153, 153);
+    --titlebg: rgb(199, 193, 193);
+    --calcbg: rgb(199, 193, 193);
     --btns: rgb(75, 73, 73);
     --btnfont: white;
     --darkmodefnt: white;
     --darkmodebtn: white;
-    --color-txt: var(--dark-text);
-    --color-back: var(--dark-back);
 }
 
 html,
