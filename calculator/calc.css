@@ -1,0 +1,144 @@
+:root {
+  --bg: linear-gradient(to bottom, rgb(136, 93, 192), rgb(241, 213, 136));
+  --titlebg: rgb(236, 180, 128);
+  --calcbg:rgb(236, 180, 128) ;
+  --btns: white;
+  --btnfont: black;
+  --darkmodebtn: rgb(61, 58, 58);
+  --darkmodefnt: black;
+}
+
+.dark {
+  --bg: rgb(36, 35, 35);
+    --titlebg: rgb(163, 163, 163);
+    --calcbg: rgb(155, 153, 153);
+    --btns: rgb(75, 73, 73);
+    --btnfont: white;
+    --darkmodefnt: white;
+    --darkmodebtn: white;
+    --color-txt: var(--dark-text);
+    --color-back: var(--dark-back);
+}
+
+html,
+body {
+  height: 100vh;
+  display: grid;
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: white;
+  background: var(--bg);
+}
+
+.container {
+  font-family: arial;
+  font-weight: bold;
+  color: #eff1e3;
+  background-color: var(--titlebg);
+  border: 1px solid #080808;
+  box-shadow: 2px 2px 3px 3px rgb(122, 121, 121);
+  width: 340px;
+  padding: 10px;
+  text-align: center;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  border-radius: 10px;
+}
+
+.title {
+  border-radius: 20px;
+  margin-top: 30px;
+  margin-left: 550px;
+  text-align: center;
+  font-size: 60px;
+  font-weight: bold;
+  font-family: "Neuton script=latin rev=1";
+  width: 400px;
+  height: 70px;
+  color: #fafbfc;
+  box-shadow: 2px 2px 3px 3px rgb(122, 121, 121);
+  text-shadow: 3px 2px 2px rgb(73, 83, 82);
+  background-color: var(--calcbg);
+  border: solid black 1px;
+  position: center;
+}
+
+table {
+  margin-top: 50px;
+  margin-left: 450px;
+  width: 600px;
+  height: 300px;
+  background-color: var(--calcbg);
+  box-shadow: 2px 2px 5px 5px rgb(88, 88, 88);
+}
+
+input[type="button"] {
+  border-radius: 10px;
+  background-color: var(--btns);
+  color: var(--btnfont);
+  border-color: #f3f1f1;
+  width: 50%;
+  margin-left: 30px;
+  height: 40px;
+  font-size: 30px;
+  font-family: "Lucida Console", monospace;
+  box-shadow: 1px 1px 3px 3px rgb(243, 230, 170);
+}
+
+input[type="text"] {
+  border-radius: 10px;
+  text-align: right;
+  background-color: white;
+  border-color: black;
+  width: 75%;
+  margin-left: 60px;
+  height: 40px;
+  font-size: 30px;
+  font-family: "Lucida Console", monospace;
+}
+
+.toggle {
+  margin-left: 700px;
+  margin-top: 10px;
+  position: center;
+  display: flex;
+}
+
+.toggle span {
+  margin-right: 10px;
+  margin-top: 10px;
+  color: var(--darkmodefnt);
+  font-size: large;
+  font-weight: bold;
+}
+
+.dark-mode-switch {
+  position: relative;
+  width: 48px;
+  height: 25px;
+  margin-top: 10px;
+  border-radius: 14px;
+  background-color: rgb(189, 189, 189);
+  cursor: pointer;
+}
+
+.dark-mode-switch-ident {
+  width: 21px;
+  height: 21px;
+  border-radius: 50%;
+  background-color: var(--darkmodebtn);
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  transition: left 0.2s ease-in-out;
+}
+
+.dark .dark-mode-switch .dark-mode-switch-ident {
+  top: 2px;
+  left: calc(2px + 50%);
+}
+
+header {
+  height: 100vh;
+  background-size: cover;
+  background-position: center;
+}
