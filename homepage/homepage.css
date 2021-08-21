@@ -52,6 +52,7 @@
           color: rgb(253, 251, 255);
           text-decoration: none;
           font-size: medium;
+          font-weight: bold;
       }
       
       .navbar ul li a:hover {
@@ -71,6 +72,7 @@
           color: rgb(253, 251, 255);
           text-decoration: none;
           font-size: medium;
+          font-weight: bold;
       }
       
       .navbar .right:hover {
@@ -83,13 +85,14 @@
           background: white;
       }
       
-      .darkmode {
+      #darkmode {
           display: flex;
           position: fixed;
-          top: 25px;
-          right: 15px;
-          height: 35px;
-      }
+          top: 30px;
+          right: 40px;
+          height: 25px;
+          cursor: pointer;
+       }
       
       .content .up h2 {
           font-size: 80px;
