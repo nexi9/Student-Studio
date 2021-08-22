@@ -9,5 +9,7 @@ Languages and Technologies used - HTML, CSS, JavaScript, PHP MyAdmin
 Team Members and their contributions-
 
 Ankita Dolai - Did the notes and registration part of the website, did the css of the calculator and calender, and also designed the logo. 
-Nayaneeeka Mahapatra - Did the todolist, game and designed the homepage and also linked the homepage with various pages of the website. 
+
+Nayaneeka Mahapatra - Did the todolist, game and designed the homepage and also linked the homepage with various pages of the website. 
+
 Saikrishna Behera - Did the news and the javascript part of the calculator, calendar and todolist. 
