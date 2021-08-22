@@ -1,124 +1,54 @@
-const game = () => {
-    let playerScore = 0;
-    let computerScore = 0;
-    let moves = 0;
+const compChoiceDisplay = document.getElementById('comp-choice')
+const userChoiceDisplay = document.getElementById('user-choice')
+const resultDisplay = document.getElementById('result')
+const possibleChoices = document.querySelectorAll('img')
 
+let userChoice
+let computerChoice
+let result
 
-    // Function to 
-    const playGame = () => {
-        const rockBtn = document.querySelector('.rock');
-        const paperBtn = document.querySelector('.paper');
-        const scissorBtn = document.querySelector('.scissors');
-        const playerOptions = [rockBtn, paperBtn, scissorBtn];
-        const computerOptions = ['rock', 'paper', 'scissors']
+possibleChoices.forEach(possibleChoice => possibleChoice.addEventListener('click', (e) => {
+    userChoice = e.target.id
+    userChoiceDisplay.innerHTML = userChoice
+    generateCompChoice()
+    getResult()
+}))
 
-        // Function to start playing game
-        playerOptions.forEach(option => {
-            option.addEventListener('click', function() {
-
-                const movesLeft = document.querySelector('.movesleft');
-                moves++;
-                movesLeft.innerText = `Moves Left: ${10-moves}`;
-
-
-                const choiceNumber = Math.floor(Math.random() * 3);
-                const computerChoice = computerOptions[choiceNumber];
-
-                // Function to check who wins
-                winner(this.innerText, computerChoice)
-
-                // Calling gameOver function after 10 moves
-                if (moves == 10) {
-                    gameOver(playerOptions, movesLeft);
-                }
-            })
-        })
-
+function generateCompChoice() {
+    const randomNumber = Math.floor(Math.random() * 3) + 1
+    if (randomNumber === 1) {
+        computerChoice = 'rock'
     }
-
-    // Function to decide winner
-    const winner = (player, computer) => {
-        const result = document.querySelector('.result');
-        const playerScoreBoard = document.querySelector('.playercount');
-        const computerScoreBoard = document.querySelector('.compcount');
-        player = player.toLowerCase();
-        computer = computer.toLowerCase();
-        if (player === computer) {
-            result.textContent = 'Tie'
-        } else if (player == 'rock') {
-            if (computer == 'paper') {
-                result.textContent = 'Computer Won';
-                computerScore++;
-                computerScoreBoard.textContent = computerScore;
-
-            } else {
-                result.textContent = 'Player Won'
-                playerScore++;
-                playerScoreBoard.textContent = playerScore;
-            }
-        } else if (player == 'scissors') {
-            if (computer == 'rock') {
-                result.textContent = 'Computer Won';
-                computerScore++;
-                computerScoreBoard.textContent = computerScore;
-            } else {
-                result.textContent = 'Player Won';
-                playerScore++;
-                playerScoreBoard.textContent = playerScore;
-            }
-        } else if (player == 'paper') {
-            if (computer == 'scissors') {
-                result.textContent = 'Computer Won';
-                computerScore++;
-                computerScoreBoard.textContent = computerScore;
-            } else {
-                result.textContent = 'Player Won';
-                playerScore++;
-                playerScoreBoard.textContent = playerScore;
-            }
-        }
+    if (randomNumber === 2) {
+        computerChoice = 'scissors'
     }
-
-    // Function to run when game is over
-    const gameOver = (playerOptions, movesLeft) => {
-
-        const chooseMove = document.querySelector('.move');
-        const result = document.querySelector('.result');
-        const reloadBtn = document.querySelector('.reload');
-
-        playerOptions.forEach(option => {
-            option.style.display = 'none';
-        })
-
-
-        chooseMove.innerText = 'Game Over!!'
-        movesLeft.style.display = 'none';
-
-        if (playerScore > computerScore) {
-            result.style.fontSize = '2rem';
-            result.innerText = 'You Won The Game'
-            result.style.color = '#308D46';
-        } else if (playerScore < computerScore) {
-            result.style.fontSize = '2rem';
-            result.innerText = 'You Lost The Game';
-            result.style.color = 'red';
-        } else {
-            result.style.fontSize = '2rem';
-            result.innerText = 'Tie';
-            result.style.color = 'grey'
-        }
-
-
-        reloadBtn.addEventListener('click', () => {
-            window.location.reload();
-        })
+    if (randomNumber === 3) {
+        computerChoice = 'paper'
     }
-
-
-    // Calling playGame function inside game
-    playGame();
-
+    compChoiceDisplay.innerHTML = computerChoice
 }
 
-// Calling the game function
-game();
+function getResult() {
+    if (computerChoice === userChoice) {
+        result = 'Its a draw!'
+    }
+    if (computerChoice === 'rock' & userChoice === 'paper') {
+        result = 'You win!'
+    }
+    if (computerChoice === 'rock' & userChoice === 'scissors') {
+        result = 'You lost!'
+    }
+    if (computerChoice === 'paper' & userChoice === 'scissors') {
+        result = 'You win!'
+    }
+    if (computerChoice === 'paper' & userChoice === 'rock') {
+        result = 'You lost!'
+    }
+    if (computerChoice === 'scissors' & userChoice === 'rock') {
+        result = 'You win!'
+    }
+    if (computerChoice === 'scissors' & userChoice === 'paper') {
+        result = 'You lost!'
+    }
+    resultDisplay.innerHTML = result
+}
