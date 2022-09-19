@@ -6,7 +6,7 @@ let apiKey = '2c255eeca3e047f08d385511b381498d'
 let newsAccordion = document.getElementById('newsAccordion');
 
 const xhr = new XMLHttpRequest();
-xhr.open('GET', `https://newsapi.org/v2/top-headlines?sources=${source}&apiKey=${apiKey}`, true);
+xhr.open('GET', `https://newsapi.org/v2/top-headlines?country=in&apiKey=2c255eeca3e047f08d385511b381498d`, true);
 
 xhr.onload = function () {
     if (this.status === 200) {
