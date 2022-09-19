@@ -1,5 +1,5 @@
        :root {
-          --bg: url('Background.png');
+          --bg: url('../homepage/Background.png');
           --welcomecolor: rgb(174, 209, 230);
           --aboutbg: rgb(48, 76, 112);
       }
