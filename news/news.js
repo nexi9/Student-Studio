@@ -1,7 +1,7 @@
 
 console.log("This is my index js file");
 let source = 'the-times-of-india';
-let apiKey = '9659d416dd844904ac0767fd2ac5af56'
+let apiKey = '2c255eeca3e047f08d385511b381498d'
 
 let newsAccordion = document.getElementById('newsAccordion');
 
